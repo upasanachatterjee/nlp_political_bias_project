@@ -8,6 +8,8 @@ from matplotlib.dates import DateFormatter
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
+import sys
+import os
 
 def parse_training_log(log_file_path):
     """Parse the training log file and extract relevant data."""
@@ -125,18 +127,36 @@ def create_task_averages_plot(df, save_path=None):
     return fig
 
 def main():
+    # Check command line arguments
+    if len(sys.argv) < 2:
+        print("Usage: python visualize_training.py <log_filename>")
+        print("Note: File will be looked for in the 'tmp' directory")
+        sys.exit(1)
     
-    log_file = "tmp/triplet_mlm_themes_tones.txt"
+    # Get filename from command line and construct full path
+    log_filename = sys.argv[1]
+    log_file = os.path.join("tmp", log_filename)
     
+    # Check if file exists
+    if not os.path.exists(log_file):
+        print(f"Error: File '{log_file}' not found!")
+        sys.exit(1)
+    
+    print(f"Parsing training log: {log_file}")
     df = parse_training_log(log_file)
     
     if df.empty:
+        print("No training data found in the log file!")
         return
     
     print(f"Found {len(df)} training steps")
     
+    # Generate output filename based on input filename
+    base_filename = os.path.splitext(log_filename)[0]
+    output_path = os.path.join("tmp", f"training_analysis_{base_filename}.png")
+    
     # Create visualizations
-    create_task_averages_plot(df, save_path="tmp/training_analysis_triplet_mlm_themes_tones.png")
+    create_task_averages_plot(df, save_path=output_path)
 
 if __name__ == "__main__":
     main()
