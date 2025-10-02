@@ -1,0 +1,221 @@
+Training Log
+==================================================
+Start Time: 2025-10-02 02:54:40.932043
+Model: roberta-base
+Dataset: dragonslayer631/bignewsalign-with-gdelt
+Total Steps: 2,275,512
+GPUs: 1
+Order: ['no more round robin -- using all tasks every step']
+Available Tasks: ['triplet', 'mlm', 'themes', 'tone']
+==================================================
+
+Step     0 | LR: 0.00e+00 | Epoch: 1 | Progress: 0.0%
+  Timing: Elapsed=0:00:02, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (0.0%), Epoch ETC: Calculating...
+  Task Averages: {'mlm': 0.9143444299697876, 'tone': 16.453285217285156, 'themes': 0.6997286081314087}
+
+Step  5000 | LR: 2.06e-07 | Epoch: 1 | Progress: 0.7%
+  Timing: Elapsed=0:19:38, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (0.7%), Epoch ETC: Calculating...
+  Task Averages: {'triplet': 1.0001087231845511, 'mlm': 1.073589032280445, 'tone': 8.211519934267644, 'themes': 0.6979056447148323}
+
+Step 10000 | LR: 4.12e-07 | Epoch: 1 | Progress: 1.3%
+  Timing: Elapsed=0:39:24, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (1.3%), Epoch ETC: 2 days, 1:09:11
+  Task Averages: {'triplet': 1.0012264919365252, 'mlm': 1.1659701429128646, 'tone': 3.917770959073439, 'themes': 0.6619208527207374}
+
+Step 15000 | LR: 6.18e-07 | Epoch: 1 | Progress: 2.0%
+  Timing: Elapsed=0:59:11, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (2.0%), Epoch ETC: 2 days, 0:53:48
+  Task Averages: {'triplet': 1.0023326661756624, 'mlm': 1.1244320108175279, 'tone': 2.652433910359823, 'themes': 0.6096323641419411}
+
+Step 20000 | LR: 8.24e-07 | Epoch: 1 | Progress: 2.6%
+  Timing: Elapsed=1:18:54, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (2.6%), Epoch ETC: 2 days, 0:33:27
+  Task Averages: {'triplet': 0.9991615223688756, 'mlm': 1.085331713938713, 'tone': 2.3520357558049807, 'themes': 0.5354176498353481}
+
+Step 25000 | LR: 1.03e-06 | Epoch: 1 | Progress: 3.3%
+  Timing: Elapsed=1:38:37, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (3.3%), Epoch ETC: 2 days, 0:13:37
+  Task Averages: {'triplet': 1.0004117217544626, 'mlm': 1.0660671848297119, 'tone': 2.1023041100380424, 'themes': 0.4263346217215061}
+
+Step 30000 | LR: 1.24e-06 | Epoch: 1 | Progress: 4.0%
+  Timing: Elapsed=1:58:19, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (4.0%), Epoch ETC: 1 day, 23:53:15
+  Task Averages: {'triplet': 0.9970186431243708, 'mlm': 1.0549677906274795, 'tone': 1.9851911309021386, 'themes': 0.299351576602459}
+
+Step 35000 | LR: 1.44e-06 | Epoch: 1 | Progress: 4.6%
+  Timing: Elapsed=2:18:00, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (4.6%), Epoch ETC: 1 day, 23:32:47
+  Task Averages: {'triplet': 0.9989740437768964, 'mlm': 1.0515940939903259, 'tone': 1.8697190259024854, 'themes': 0.19859646349847318}
+
+Step 40000 | LR: 1.65e-06 | Epoch: 1 | Progress: 5.3%
+  Timing: Elapsed=2:37:28, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (5.3%), Epoch ETC: 1 day, 23:08:37
+  Task Averages: {'triplet': 0.9985736620088085, 'mlm': 1.0459565821766854, 'tone': 1.8787052879902526, 'themes': 0.1285110698506236}
+
+Step 45000 | LR: 1.85e-06 | Epoch: 1 | Progress: 5.9%
+  Timing: Elapsed=2:56:59, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (5.9%), Epoch ETC: 1 day, 22:46:18
+  Task Averages: {'triplet': 0.9991744147583762, 'mlm': 1.039518548977375, 'tone': 1.7498680884646645, 'themes': 0.0860753853365779}
+
+Step 50000 | LR: 2.06e-06 | Epoch: 1 | Progress: 6.6%
+  Timing: Elapsed=3:16:27, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (6.6%), Epoch ETC: 1 day, 22:23:44
+  Task Averages: {'triplet': 0.9988192677032203, 'mlm': 1.0403159683942795, 'tone': 1.7584041817908254, 'themes': 0.061103150637075304}
+
+Step 55000 | LR: 2.27e-06 | Epoch: 1 | Progress: 7.3%
+  Timing: Elapsed=3:36:10, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (7.3%), Epoch ETC: 1 day, 22:05:09
+  Task Averages: {'triplet': 0.9945259840918551, 'mlm': 1.0383091698169709, 'tone': 1.6919068867670817, 'themes': 0.047425818337127564}
+
+Step 60000 | LR: 2.47e-06 | Epoch: 1 | Progress: 7.9%
+  Timing: Elapsed=3:55:47, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (7.9%), Epoch ETC: 1 day, 21:44:56
+  Task Averages: {'triplet': 0.996327386972279, 'mlm': 1.0355498267054557, 'tone': 1.5546265945848627, 'themes': 0.039254085609689356}
+
+Step 65000 | LR: 2.68e-06 | Epoch: 1 | Progress: 8.6%
+  Timing: Elapsed=4:15:25, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (8.6%), Epoch ETC: 1 day, 21:25:09
+  Task Averages: {'triplet': 0.9961523822140781, 'mlm': 1.0334570454001426, 'tone': 1.6387139933981085, 'themes': 0.035112463955394926}
+
+Step 70000 | LR: 2.88e-06 | Epoch: 1 | Progress: 9.2%
+  Timing: Elapsed=4:34:55, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (9.2%), Epoch ETC: 1 day, 21:04:01
+  Task Averages: {'triplet': 0.9946273740508113, 'mlm': 1.033830992758274, 'tone': 1.5171759665158935, 'themes': 0.03282794393971562}
+
+Step 75000 | LR: 3.09e-06 | Epoch: 1 | Progress: 9.9%
+  Timing: Elapsed=4:54:31, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (9.9%), Epoch ETC: 1 day, 20:44:06
+  Task Averages: {'triplet': 0.9954298279909273, 'mlm': 1.0284902798295021, 'tone': 1.4714343202263587, 'themes': 0.03221120408773422}
+
+Step 80000 | LR: 3.30e-06 | Epoch: 1 | Progress: 10.5%
+  Timing: Elapsed=5:14:01, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (10.5%), Epoch ETC: 1 day, 20:23:18
+  Task Averages: {'triplet': 0.993444292460393, 'mlm': 1.0266890481710433, 'tone': 1.466568347689599, 'themes': 0.0315471457157284}
+
+Step 85000 | LR: 3.50e-06 | Epoch: 1 | Progress: 11.2%
+  Timing: Elapsed=5:33:30, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (11.2%), Epoch ETC: 1 day, 20:02:34
+  Task Averages: {'triplet': 0.9924191656366415, 'mlm': 1.0241628195881844, 'tone': 1.4491533264778222, 'themes': 0.03125551299033687}
+
+Step 90000 | LR: 3.71e-06 | Epoch: 1 | Progress: 11.9%
+  Timing: Elapsed=5:52:57, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (11.9%), Epoch ETC: 1 day, 19:41:39
+  Task Averages: {'triplet': 0.9940711005439615, 'mlm': 1.026545724749565, 'tone': 1.4584948437344254, 'themes': 0.030783208416588603}
+
+Step 95000 | LR: 3.91e-06 | Epoch: 1 | Progress: 12.5%
+  Timing: Elapsed=6:12:30, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (12.5%), Epoch ETC: 1 day, 19:21:38
+  Task Averages: {'triplet': 0.9956953735903306, 'mlm': 1.024421316897869, 'tone': 1.4118062688516535, 'themes': 0.030352346789743752}
+
+Step 100000 | LR: 4.12e-06 | Epoch: 1 | Progress: 13.2%
+  Timing: Elapsed=6:32:05, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (13.2%), Epoch ETC: 1 day, 19:01:56
+  Task Averages: {'triplet': 0.9869242441487609, 'mlm': 1.0216711698412895, 'tone': 1.4048231794477741, 'themes': 0.03073352029407397}
+
+Step 105000 | LR: 4.33e-06 | Epoch: 1 | Progress: 13.8%
+  Timing: Elapsed=6:51:39, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (13.8%), Epoch ETC: 1 day, 18:42:08
+  Task Averages: {'triplet': 0.9601387713709316, 'mlm': 1.0289936527371406, 'tone': 1.42621718349337, 'themes': 0.030442146350163967}
+
+Step 110000 | LR: 4.53e-06 | Epoch: 1 | Progress: 14.5%
+  Timing: Elapsed=7:11:07, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (14.5%), Epoch ETC: 1 day, 18:21:42
+  Task Averages: {'triplet': 0.7882238503386657, 'mlm': 1.026381513929367, 'tone': 1.4237886765465544, 'themes': 0.030887940903194248}
+
+Step 115000 | LR: 4.74e-06 | Epoch: 1 | Progress: 15.2%
+  Timing: Elapsed=7:30:40, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (15.2%), Epoch ETC: 1 day, 18:01:51
+  Task Averages: {'triplet': 0.6014195756213294, 'mlm': 1.0265906395673752, 'tone': 1.3939359834508487, 'themes': 0.030596616700291634}
+
+Step 120000 | LR: 4.94e-06 | Epoch: 1 | Progress: 15.8%
+  Timing: Elapsed=7:50:10, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (15.8%), Epoch ETC: 1 day, 17:41:41
+  Task Averages: {'triplet': 0.5274553694430232, 'mlm': 1.0296382280945777, 'tone': 1.3207128384040452, 'themes': 0.030624522988591342}
+
+Step 125000 | LR: 5.15e-06 | Epoch: 1 | Progress: 16.5%
+  Timing: Elapsed=8:09:52, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (16.5%), Epoch ETC: 1 day, 17:22:43
+  Task Averages: {'triplet': 0.47814421634281545, 'mlm': 1.0311804681658745, 'tone': 1.3104119068991853, 'themes': 0.030563420633971692}
+
+Step 130000 | LR: 5.36e-06 | Epoch: 1 | Progress: 17.1%
+  Timing: Elapsed=8:29:19, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (17.1%), Epoch ETC: 1 day, 17:02:24
+  Task Averages: {'triplet': 0.4848387319539945, 'mlm': 1.0285159481167794, 'tone': 1.3160739570447955, 'themes': 0.030757144631072878}
+
+Step 135000 | LR: 5.56e-06 | Epoch: 1 | Progress: 17.8%
+  Timing: Elapsed=8:48:54, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (17.8%), Epoch ETC: 1 day, 16:42:45
+  Task Averages: {'triplet': 0.45306401025281917, 'mlm': 1.0274118535399437, 'tone': 1.300390228827398, 'themes': 0.030553839129209517}
+
+Step 140000 | LR: 5.77e-06 | Epoch: 1 | Progress: 18.5%
+  Timing: Elapsed=9:08:37, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (18.5%), Epoch ETC: 1 day, 16:23:43
+  Task Averages: {'triplet': 0.4158950407660939, 'mlm': 1.027521774315834, 'tone': 1.3428449598581058, 'themes': 0.030409864805173128}
+
+Step 145000 | LR: 5.97e-06 | Epoch: 1 | Progress: 19.1%
+  Timing: Elapsed=9:27:59, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (19.1%), Epoch ETC: 1 day, 16:03:12
+  Task Averages: {'triplet': 0.41714944153361816, 'mlm': 1.0275984444618225, 'tone': 1.1984293020809258, 'themes': 0.03010730656599626}
+
+Step 150000 | LR: 6.18e-06 | Epoch: 1 | Progress: 19.8%
+  Timing: Elapsed=9:47:31, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (19.8%), Epoch ETC: 1 day, 15:43:23
+  Task Averages: {'triplet': 0.3973365221958084, 'mlm': 1.0260414147138595, 'tone': 1.248977507274431, 'themes': 0.03073764537582174}
+
+Step 155000 | LR: 6.39e-06 | Epoch: 1 | Progress: 20.4%
+  Timing: Elapsed=10:07:12, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (20.4%), Epoch ETC: 1 day, 15:24:13
+  Task Averages: {'triplet': 0.39510856724354654, 'mlm': 1.0278492433071136, 'tone': 1.2738257246737492, 'themes': 0.030217607827298345}
+
+Step 160000 | LR: 6.59e-06 | Epoch: 1 | Progress: 21.1%
+  Timing: Elapsed=10:26:54, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (21.1%), Epoch ETC: 1 day, 15:05:04
+  Task Averages: {'triplet': 0.35599726942615534, 'mlm': 1.02567578612566, 'tone': 1.2185587077074052, 'themes': 0.030176966685242952}
+
+Step 165000 | LR: 6.80e-06 | Epoch: 1 | Progress: 21.8%
+  Timing: Elapsed=10:46:28, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (21.8%), Epoch ETC: 1 day, 14:45:23
+  Task Averages: {'triplet': 0.3524124439728537, 'mlm': 1.0252742433667184, 'tone': 1.174544437063537, 'themes': 0.030424731337465347}
+
+Step 170000 | LR: 7.00e-06 | Epoch: 1 | Progress: 22.4%
+  Timing: Elapsed=11:05:59, ETC=Calculating..., Completion=Calculating...
+  Speed: 0.00 steps/s, 0 samples/s
+  Epoch: 1 (22.4%), Epoch ETC: 1 day, 14:25:30
+  Task Averages: {'triplet': 0.3358578733094925, 'mlm': 1.0247397417545319, 'tone': 1.267179273383908, 'themes': 0.0299298887565732}
+

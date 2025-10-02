@@ -126,7 +126,7 @@ def create_task_averages_plot(df, save_path=None):
 
 def main():
     
-    log_file = "tmp/triplet_mlm.txt"
+    log_file = "tmp/triplet_mlm_themes_tones.txt"
     
     df = parse_training_log(log_file)
     
@@ -136,7 +136,7 @@ def main():
     print(f"Found {len(df)} training steps")
     
     # Create visualizations
-    create_task_averages_plot(df, save_path="training_analysis.png")
+    create_task_averages_plot(df, save_path="tmp/training_analysis_triplet_mlm_themes_tones.png")
 
 if __name__ == "__main__":
     main()
