@@ -14,11 +14,12 @@ class MeanPooler(nn.Module):
 class MultiTaskRoberta(nn.Module):
     def __init__(self, name="roberta-base", emb_dim=256, theme_path="top_themes.txt"):
         super().__init__()
+        # Single backbone model
         self.backbone = AutoModel.from_pretrained(name)
         self.pool = MeanPooler()
         hid = self.backbone.config.hidden_size
 
-        # Heads
+        # Task-specific heads
         self.proj = nn.Sequential(nn.Linear(hid, emb_dim), nn.GELU())
         num_themes = 0
 
@@ -27,16 +28,51 @@ class MultiTaskRoberta(nn.Module):
         self.theme_head = nn.Linear(hid, num_themes)
         self.tone_head = nn.Linear(hid, 2)
 
-        # MLM – we reuse a tied-weights LM head by wrapping a separate module that shares the encoder
-        self.mlm = AutoModelForMaskedLM.from_pretrained(name)
-        # Tie encoder weights
-        self.mlm.roberta = self.backbone
+        # MLM head - create just the head, not the full model
+        # Load the full MLM model temporarily to get the LM head
+        mlm_model = AutoModelForMaskedLM.from_pretrained(name)
+        self.lm_head = mlm_model.lm_head
+        # Clean up the temporary model
+        del mlm_model
 
-    def forward_embed(self, input_ids, attention_mask):
-        out = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
-        pooled = self.pool(out.last_hidden_state, attention_mask)
-        z = F.normalize(self.proj(pooled), p=2, dim=-1)
-        return z, pooled  # z for triplet, pooled for themes/tone
+    def forward(self, input_ids=None, attention_mask=None, mlm=False, labels=None, **kwargs):
+        # Clone inputs to prevent in-place modifications affecting autograd
+        if input_ids is not None:
+            input_ids = input_ids.clone()
+        if attention_mask is not None:
+            attention_mask = attention_mask.clone()
+            
+        # Use the single backbone for all tasks
+        backbone_output = self.backbone(
+            input_ids=input_ids, 
+            attention_mask=attention_mask,
+            output_hidden_states=False,
+            return_dict=True
+        )
+        
+        if mlm:
+            # For MLM, apply the LM head to the last hidden states
+            sequence_output = backbone_output.last_hidden_state
+            prediction_scores = self.lm_head(sequence_output)
+            
+            masked_lm_loss = None
+            if labels is not None:
+                loss_fct = nn.CrossEntropyLoss()
+                masked_lm_loss = loss_fct(
+                    prediction_scores.view(-1, prediction_scores.size(-1)), 
+                    labels.view(-1)
+                )
+            
+            # Return in the format expected by the training loop
+            return type('MLMOutput', (), {
+                'loss': masked_lm_loss,
+                'logits': prediction_scores
+            })()
+        else:
+            # For other tasks, pool and return embeddings
+            pooled = self.pool(backbone_output.last_hidden_state, attention_mask)
+            z = F.normalize(self.proj(pooled), p=2, dim=-1)
+            return z, pooled  # z for triplet, pooled for themes/tone
 
     def save_checkpoint(self, path):
         """Save model checkpoint with config info"""
@@ -50,9 +86,6 @@ class MultiTaskRoberta(nn.Module):
             },
         }
         torch.save(checkpoint, path)
-
-    def forward_mlm(self, **batch):
-        return self.mlm(**batch)
 
 
 class BiasClassifier(PreTrainedModel):
